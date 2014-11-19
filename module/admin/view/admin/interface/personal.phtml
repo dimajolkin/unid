@@ -1,0 +1,45 @@
+<!--<ul class="breadcrumb">-->
+<!--    <li><a href="--><?php //echo $this->url('kafedra'); ?><!--">Главная</a> <span class="divider">/</span></li>-->
+<!--    <li class="active">Персонал</li>-->
+<!--</ul>-->
+<h1>Персонал</h1>
+
+<form method="post">
+    <div  class="form-search" >
+        <div class="input-append">
+            <input type="text" id="find-user"  name="find-user" class="span12 search-query">
+            <button id='form-search-personal'  class="btn"><i class="icon-search"></i>Найти</button>
+        </div>
+    </div>
+    <br>
+</form>
+
+<table id='table_content' class="table table-bordered table-hover" style="margin-bottom: 10px">
+    <tbody>
+    <tr>
+        <td width="5" style="margin-right: 10px"><b>#</b></td>
+
+        <td calign="center" ><b id ='table_cap'>FIO</b></td>
+    </tr>
+    </tbody>
+    <?php
+    if(isset($result))
+        foreach ($result as $group) : ?>
+            <tr>
+                <td>
+                    <?php static $num=0 ; echo $num++; ?> </td>
+                <td >
+
+                    <?php echo $group->get(array('familie','name','gname')); ?>
+                </td>
+                <td>
+                    <?php echo $group->get(array('login')); ?>
+                </td>
+                <td>
+                   <?php echo $group->get(array('password')); ?>
+                </td>
+
+            </tr>
+        <?php endforeach; ?>
+</table>
+

@@ -1,0 +1,1 @@
+SELECT "skafedra".* FROM "skafedra" WHERE "login" = '' AND "id_kaf" = '1'

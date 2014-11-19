@@ -1,0 +1,24 @@
+<?php
+echo $this->headTitle('Добавление новостей')
+?>
+<h1>Добавление новостей</h1>
+<div class="row-fluid">
+    <div class="row-fluid">
+        <?php
+        echo $this->form()->openTag($form);
+        foreach( $form->caps as  $cap  ):
+            ?>
+            <div class="cell" >
+                <?php echo $this->formRow($form->get( $cap )) ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?php  echo $this->form()->closeTag(); ?>
+    <div class="cell">
+        <button type="submit"
+                validate
+                style="width: 100%"
+                class="btn btn-success" ><i class="icon-ok"></i> Сохранить
+        </button>
+    </div>
+</div>

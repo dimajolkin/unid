@@ -1,0 +1,39 @@
+<h1>Настройки</h1>
+<hr>
+<div id="sys_msg">
+    <?php echo $this->showMessages(); ?>
+</div>
+
+<form method="post" action="">
+    <h3>Настройка кафедры</h3>
+
+
+    <div class="controls controls-row">
+
+        <label class="cell">
+            <span> Название кафедры:</span>
+            <input valid="true" type="text" name="name_kaf" id="login" class="span9" value="<?php echo $kaf->name_kaf; ?>">
+        </label>
+        <label class="cell">
+            <span> Введите новый пароль для кафедры:</span>
+            <input valid="true" type="password" name="password" id="login" class="span9" value="<?php echo $kaf->password; ?>">
+        </label>
+
+
+        <h3>Смена заведующего</h3>
+
+
+        <label class="cell">
+            <span>  Введите логин нового заведующего кафедрой:</span>
+            <input valid="true" type="text" name="login" id="login" class="span3" placeholder="Логин" value="<?php echo $kaf->zav_kaf; ?>">
+        </label>
+        <label class="cell">
+            <span>  Введите пароль нового заведующего кафедрой:</span>
+            <input valid="true" type="password" name="login_password" id="password" class="span3" placeholder="Логин" value="">
+        </label>
+
+    </div>
+    <div class="well">
+        <button type="submit" class="btn btn-success btn-large" style="width: 100%">Сохранить</button>
+    </div>
+</form>

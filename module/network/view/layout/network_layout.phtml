@@ -1,0 +1,62 @@
+<?php echo $this->doctype();
+//$this->storage = $this->getServiceLocator() ->get('Application\Model\MyAuthStorage');
+//$user = (isset($_SESSION['Zend_Auth']['user']))? $_SESSION['Zend_Auth']['user']:null;
+
+?>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link type="image/x-icon" href="/img/logo.ico" rel="shortcut icon">
+    <?php echo $this->headTitle('UNID '. $this->translate(' КГУ'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <?php echo $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+    ?>
+
+    <!-- Le styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+        ->prependStylesheet($this->basePath() . '/css/styleTable.css')
+        ->prependStylesheet($this->basePath() . '/css/news.css')
+        ->prependStylesheet($this->basePath() . '/css/anim.css')
+    ?>
+    <!-- Scripts -->
+    <?php echo $this->headScript()
+        ->prependFile($this->basePath() . '/js/animation/load.js')
+
+        ->prependFile($this->basePath() . '/js/API.js')
+        ->prependFile($this->basePath() . '/js/Table/API.js')
+        ->prependFile($this->basePath() . '/js/unid/lib.js')
+        ->prependFile($this->basePath().'/js/message/message.js')
+        ->prependFile($this->basePath() . '/js/bootstrap.js')
+        ->prependFile($this->basePath() . '/js/jquery.js')
+        ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+        ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+    ; ?>
+</head>
+<body>
+
+<!--<h1>Личный кабинет</h1>-->
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            <ul class="nav nav-tabs nav-stacked">
+                <li class="active"><a href="#"> Главная</a></li>
+                <li><a href="#">Справка</a></li>
+            </ul>
+
+        </div>
+        <div class="span10">
+
+          <?php echo $this->content; ?>
+            <!--Body content-->
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

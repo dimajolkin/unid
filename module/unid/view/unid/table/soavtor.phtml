@@ -1,0 +1,68 @@
+
+<div  class="form-search">
+    <div class="input-append">
+        <input type="text" id="text-search" class="span12 search-query" placeholder="Введите название записи ">
+        <button id='form-search' table="<?php echo $tableInfo->get('id');?>" class="btn"><i class="icon-search"></i>Найти</button>
+    </div>
+</div>
+<br>
+
+<table id='table_result' class="table table-hover" style="margin-bottom: 100px">
+
+</table>
+
+
+<h1>Список соавторств</h1>
+<p>Записи добавленные вами</p>
+<br>
+
+<table id='table_soavtor' class="table table-bordered table-hover" style="margin-bottom: 100px">
+    <tbody>
+    <tr>
+        <?php foreach($tableInfo->boss_row as $boss =>$boss_name) : ?>
+            <td calign="center" ><b><?php echo $boss_name; ?></b></td>
+        <?php endforeach; ?>
+
+        <td>Состояние</td>
+    </tr>
+    </tbody>
+    <tbody>
+    <?php
+
+    if(isset($table_soavtor))
+        foreach ($table_soavtor as $group) :
+            ?>
+            <tr>
+                <?php foreach($tableInfo->boss_row as $boss => $boss_name): ?>
+                    <td>
+
+                        <div class="dropdown">
+                            <a id="drop001" class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" type="button">
+                                <?php echo $group->$boss; ?>
+                                <b class="caret"></b>
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="drop001" role="menu">
+                                <li class="nav-header"></li>
+                                <li><a target="_blank"
+                                       href="<?php echo $this->url('user/archive',array('action'=>'view',  'id_table'=>$tableInfo->id ,'id'=>$group->id)); ?>">
+                                        <i class="icon-flag"></i>Просмотр</a>
+                                </li>
+
+                                <li class="nav-header"></li>
+                                <li><a href="#">Отмена</a></li>
+                            </ul>
+                        </div>
+
+                    </td>
+                <?php endforeach; ?>
+
+                <td id_doc="<?php echo $group->get('id'); ?>" >
+
+                </td>
+
+            </tr>
+        <?php endforeach; ?>
+
+    </tbody>
+</table>

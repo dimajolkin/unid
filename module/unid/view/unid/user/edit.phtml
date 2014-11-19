@@ -1,0 +1,28 @@
+<?php
+echo $this->headTitle('Редактор записи')
+?>
+    <h1>Редактор</h1>
+    <ul class="breadcrumb">
+        <li> <a href="<?php echo $this->url('user'); ?>"><i class="icon-arrow-left"></i> Личный кабинет</a> <span class="divider">/</span></li>
+        <li class="active">Редактор</li>
+    </ul>
+
+<!--<div class="row-fluid">-->
+<!--    <div class="row-fluid">-->
+<!--        --><?php
+//        echo $this->form()->openTag($form);
+//        foreach( $form->caps as  $cap  ):
+//            ?>
+<!--            <div class="cell" >-->
+<!--                --><?php //echo $this->formRow($form->get( $cap )) ?>
+<!--            </div>-->
+<!--        --><?php //endforeach; ?>
+<!--    </div>-->
+<!--    --><?php // echo $this->form()->closeTag(); ?>
+<!--    <div id="button_panel"class="row-fluid">-->
+<!--        <div class="span9 group_button" style="margin-left: 12px;" >-->
+<!--            <button class="btn btn-success" type="submit" validate>Редактировать</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<?php echo $this->form()->render($form); ?>

@@ -1,0 +1,78 @@
+
+<h1>Персонал</h1>
+
+<div  class="form-search " >
+    <div class="input-append">
+        <input type="text" id="text-search" class="span12 search-query">
+        <button id='form-search-personal'  class="btn"><i class="icon-search"></i>Найти</button>
+    </div>
+</div>
+<br>
+
+<table id='table_result' class="table table-bordered table-hover" style="margin-bottom: 10px">
+    <!--    <tbody>-->
+    <!--    <tr>-->
+    <!--        <td calign="center"><b>ФИО</b></td>-->
+    <!--        <td>Состояние</td>-->
+    <!--    </tr>-->
+    <!--    </tbody>-->
+
+</table>
+
+<h1>Персонал кафедры</h1>
+<table id='table_content' class="table table-bordered table-hover" style="margin-bottom: 10px">
+    <tbody>
+    <tr>
+        <!--        <td width="5" style="margin-right: 10px"><b>#</b></td>-->
+
+        <td calign="center" ><b id ='table_cap'>Персонал</b></td>
+        <td calign="center" ><b>@Email</b></td>
+
+    </tr>
+    </tbody>
+    <tbody>
+    <?php
+    if(isset($personal))
+        foreach ($personal as $group) : ?>
+            <tr id_doc="<?php echo $group->id; ?>">
+
+                <td >
+
+                    <div class="dropdown">
+                        <a id="drop001" class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" type="button">
+                            <?php echo $group->get(array('familie','name','gname')); ?>
+                            <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="drop001" role="menu">
+                            <li class="nav-header"></li>
+
+                            <!--                            <li><a-->
+                            <!--                                   href="--><?php //echo $this->url('kafedra/table',array('action'=>'edit','id_table'=>22, 'id'=>$group->id, 'login'=>$group->login)); ?><!--">-->
+                            <!--                                    <i class="icon-edit"></i> Редактировать</a>-->
+                            <!--                            </li>-->
+
+                            <li><a
+                                    href="<?php echo $this->url('kafedra/default',array('action'=>'edit','id'=>$group->login)); ?>">
+                                    <i class="icon-edit"></i> Редактировать</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   remove="<?php echo $this->url('kafedra/default',array('action'=>'removePersonal','id'=>$group->login)); ?>">
+                                    <i class="icon-remove"></i> Удалить</a>
+                            </li>
+
+                            <li class="nav-header"></li>
+                            <li><a href="#">Отмена</a></li>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    <?php echo $group->email; ?>
+                </td>
+
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+

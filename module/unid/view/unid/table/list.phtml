@@ -1,0 +1,69 @@
+
+<table id='table_content' class="table table-bordered table-hover" style="
+margin-bottom: 130px">
+
+    <tbody>
+    <tr>
+        <td width="5" style="margin-right: 10px"><b>#</b></td>
+        <?php  foreach($tableInfo->boss_row as $boss => $boss_name): ?>
+            <td calign="center" ><b id ='table_cap'><?php echo $boss_name ?></b></td>
+        <?php endforeach; ?>
+    </tr>
+    </tbody>
+    <?php
+    if(isset($table_list))
+        foreach ($table_list as $group) : ?>
+            <tr>
+                <td> <?php static $num=1 ; echo $num++; ?> </td>
+                <?php
+                $bool = true;
+                foreach($tableInfo->boss_row as $boss => $boss_name):
+                    ?>
+
+                    <?php if($bool): $bool = false; ?>
+                    <td >
+
+                        <div class="dropdown">
+                            <a id="drop001" class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" type="button">
+                                <?php echo $this->escapeHtml($group->$boss)?>
+                                <b class="caret"></b>
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="drop001" role="menu">
+
+                                <li class="nav-header"></li>
+                                <!--                                <li><a-->
+                                <!--                                        href="--><?php //echo $this->url('user',array('controller'=>'Table','action'=>'edit',  'id_table'=>$tableInfo->get('id') ,'id'=>$group->get('id'))); ?><!--">-->
+                                <!--                                        <i class="icon-edit"></i> Редактировать</a></li>-->
+                                <!--                                <li>-->
+                                <li><a
+                                        href="<?php echo $this->url('user/table',array('action'=>'edit','id_table'=>$tableInfo->id ,'id'=>$group->id)); ?>">
+                                        <i class="icon-edit"></i> Редактировать</a></li>
+                                <li>
+                                    <a href="#" remove="<?php echo $this->url('user/table',array('action'=>'remove','id_table'=>$tableInfo->get('id') ,'id'=>$group->get('id'))); ?>">
+                                        <i class="icon-remove"></i> Удалить</a>
+                                </li>
+                                <?php if( $this->tableInfo->soavtor != "null"): ?>
+                                    <li>
+                                        <a  href="<?php echo $this->url('user/table',array('action'=>'editsoavtor','id_table'=>$tableInfo->get('id') ,'id'=>$group->get('id'))); ?>">
+                                            <i class="icon-user"></i> Соавторство</a>
+                                    </li>
+                                <?php endif; ?>
+                                <li class="nav-header"></li>
+                                <li><a href="#">Отмена</a></li>
+                            </ul>
+                        </div>
+
+                    </td>
+                <?php else: ?>
+                    <td>
+                        <?php echo $group->get($boss); ?>
+                    </td>
+
+                <?php endif; ?>
+                <?php endforeach; ?>
+
+            </tr>
+        <?php endforeach; ?>
+</table>
+

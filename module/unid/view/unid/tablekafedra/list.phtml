@@ -1,0 +1,97 @@
+<?php //if(isset($this->hidden_cap)): ?>
+<!--    <h1 style="display: table-row ">-->
+<!--        <div-->
+<!--            style="color: #c0c0c0;-->
+<!--                float: left;-->
+<!--               margin-bottom: 20px;-->
+<!--               margin-right: 10px;-->
+<!--     ">-->
+<!--            --><?php //echo $tableInfo->year; ?><!--  </div> --><?php //echo $tableInfo->get('group_')." \ ".$tableInfo->get('menu');  ?><!-- </h1>-->
+<!---->
+<?php //endif; ?>
+
+<div class="tab-pane " id="ms_tab2" style=" overflow-y: hidden; padding: 10px; margin-bottom: 50px;" >
+
+    <table id='table_content' class="table table-bordered table-hover" style="margin-bottom: 100px">
+        <tbody>
+        <tr>
+            <td width="5" style="margin-right: 10px"><b>#</b></td>
+            <?php if(isset($fio)): ?>
+            <td><b>ФИО</b></td>
+            <?php endif; ?>
+            <?php foreach($tableInfo->boss_row as $boss => $boss_name): ?>
+                <td calign="center" ><b id ='table_cap'><?php echo $boss_name; ?></b></td>
+            <?php endforeach; ?>
+
+
+        </tr>
+        </tbody>
+        <?php
+        if(isset($table_list))
+            foreach ($table_list as $group) : ?>
+                <tr>
+                    <td>
+                        <?php static $num=1 ; echo $num++; ?>
+                    </td>
+                    <?php if(isset($fio)): ?>
+                    <td>
+                        <?php echo $group->FIO; ?>
+                    </td>
+                    <?php endif; ?>
+                    <?php
+                    $bool = false;
+                    foreach($tableInfo->boss_row as $boss =>$boss_name):
+
+                        if(!$bool): $bool = true;
+                            ?>
+                            <td>
+
+                                <div cell style="margin-left: 10px">
+                                    <div class="dropdown">
+                                        <a id="drop001" class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" type="button">
+                                            <?php echo $this->escapeHtml($group->$boss)?>
+                                            <b class="caret"></b>
+                                        </a>
+
+                                        <ul class="dropdown-menu" aria-labelledby="drop001" role="menu">
+
+                                            <li class="nav-header"></li>
+                                            <li> <a href="<?php echo $this->url('kafedra/table',array('action'=>'edit',  'id_table'=>$tableInfo->id ,'id'=>$group->id,'login'=>$group->login) ); ?>">
+                                                    <i class="icon-edit"></i> Редактировать</a></li>
+                                            <?php if(isset($soavtor)): ?>
+
+                                                <li>
+                                                    <a  target="_blank"
+                                                        href="<?php echo $this->url('user',array('controller'=>'Table','action'=>'editsoavtor','id_table'=>$tableInfo->id ,'id'=>$group->id, 'login'=>$group->login)); ?>">
+                                                        <i class="icon-user"></i> Соавторство</a>
+                                                </li>
+                                            <?php endif; ?>
+                                            <?php if(isset($remove)): ?>
+                                                <li>
+                                                    <a href="#" remove="<?php echo $this->url('kafedra/table',array('controller'=>'Tablekafedra','action'=>'remove','id_table'=>$tableInfo->id ,'id'=>$group->id)); ?>">
+                                                        <i class="icon-remove"></i> Удалить</a>
+                                                </li>
+                                            <?php endif; ?>
+                                            <li class="nav-header"></li>
+                                            <li><a href="#">Отмена</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </td>
+                        <?php else: ?>
+                            <td>
+                                <?php echo $group->$boss; ?>
+                            </td>
+                        <?php endif; ?>
+                    <?php   endforeach; ?>
+                </tr>
+
+
+
+            <?php endforeach; ?>
+    </table>
+
+
+
+</div>

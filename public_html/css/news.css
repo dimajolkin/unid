@@ -1,0 +1,23 @@
+
+.news{
+
+    background: #e6e6e8;
+    padding: 4px;
+    margin-left: 0px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.news h4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.news:hover{
+    background: #bdbdbd;
+}
+.news time{
+    color: #bdbdbd;
+    margin-bottom: 0px;
+    float: right;
+}
+

@@ -1,0 +1,22 @@
+
+<?php //echo $this->form()->openTag($form); ?>
+<?php //foreach($form->getElements() as $element): ?>
+<!--    <div class="cell">-->
+<!--        --><?php //echo $this->formRow($element); ?>
+<!--    </div>-->
+<?php //endforeach; ?>
+
+<?php
+echo $this->form()->render($form);
+//echo $this->formCollection($form->get('list'));
+
+
+//$brand = $form->get('list');
+// foreach($brand->getElements() as $element):
+//   echo $this->formRow($element);
+// endforeach;
+
+
+?>
+
+<?php // echo $this->form()->closeTag(); ?>

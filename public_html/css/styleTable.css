@@ -1,0 +1,89 @@
+
+.cell{
+    width: 95%;
+    position: inherit;
+    display: table;
+    background: #f7f7f9;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px double silver;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 12px;
+    float: left;
+}
+.cell:hover{
+    background: #e9e9eb;
+}
+
+.cell > .text {
+    float: right;
+    width: 70%;
+}
+
+.cell > span{
+    float: left;
+    margin-right: 30px;
+    padding: 10px;
+}
+fieldset[class='cell']
+{
+    width: 95%;
+    position: inherit;
+    display: table;
+    background: #f7f7f9;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px double silver;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 12px;
+    float: left;
+
+}
+fieldset[class='cell']
+{
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 12px;
+    margin-bottom: 5px;
+}
+fieldset[class='cell'] > label {
+
+    width: 150px;
+    position: inherit;
+    display: table;
+    background: #f2f2f4;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px double silver;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 12px;
+    float: left;
+
+}
+
+fieldset[class='cell'] > legend {
+
+    float: inherit;
+    display: table;
+    margin-top: 0px;
+    position: inherit;
+
+    padding: 0px;
+    margin-bottom: 0px;
+    font-size: 15px;
+    /*line-height: 40px; */
+    color: #333333;
+    border: 0;
+    border-bottom: none;
+}
+
+fieldset[class='cell'] > label[class='checkbox']{
+
+}
+
+fieldset[class='cell'] > label:not(.checkbox){
+   clear: both;
+}

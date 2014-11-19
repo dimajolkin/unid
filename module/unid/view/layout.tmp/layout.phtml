@@ -1,0 +1,209 @@
+<?php echo $this->doctype();
+//$this->storage = $this->getServiceLocator() ->get('Application\Model\MyAuthStorage');
+//$user = (isset($_SESSION['Zend_Auth']['user']))? $_SESSION['Zend_Auth']['user']:null;
+
+?>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link type="image/x-icon" href="/img/logo.ico" rel="shortcut icon">
+    <?php echo $this->headTitle('UNID '. $this->translate(' КГУ'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <?php echo $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+    ?>
+
+    <!-- Le styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+        ->prependStylesheet($this->basePath() . '/css/styleTable.css')
+        ->prependStylesheet($this->basePath() . '/css/news.css')
+        ->prependStylesheet($this->basePath() . '/css/anim.css')
+        ->prependStylesheet($this->basePath() . '/css/unid.css')
+    ?>
+    <!-- Scripts -->
+    <?php echo $this->headScript()
+        ->prependFile($this->basePath() . '/js/animation/load.js')
+        ->prependFile($this->basePath() . '/js/API.js')
+//        ->prependFile($this->basePath() . '/js/Table/API.js')
+        ->prependFile($this->basePath() . '/js/unid/lib.js')
+        ->prependFile($this->basePath().  '/js/message/message.js')
+        ->prependFile($this->basePath() . '/js/bootstrap.js')
+        ->prependFile($this->basePath() . '/js/jquery-2.1.1.min.js')
+        ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+        ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+    ;
+    ?>
+    <script type="application/javascript">
+
+    </script>
+</head>
+
+<body>
+<div id="page_load" style="z-index: 99999; display: none">
+    <div id="loader"></div>
+</div>
+
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">UNID</a>
+            <?php if( isset($user) ): ?>
+                <div class="navbar-static-top">
+                    <ul class="nav">
+                        <li><a href="<?php echo  $this->url('user',array('controller'=>'user','action'=>'kontact')); ?>" onclick=""><i class="icon-edit"></i>Контакты</a></li>
+                        <li><a href="<?php echo  $this->url('help'); ?>"><i class="icon-ok"></i>Справка</a></li>
+                        <!--   <li  class="kaf_hidden" ><a href="#application" catalog="Message" >Сообщения</a></li> -->
+                    </ul>
+
+                    <ul id="user_panel" class="nav pull-right" >
+                        <li><a href="<?php echo  $this->url('user',array('controller'=>'user','action'=>'exit')); ?>"><i class="icon-off"></i>Выход</a></li>
+
+                    </ul>
+
+                </div>
+            <?php endif; ?> <!--  -->
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+
+
+            <ul class="nav nav-pills">
+                <?php if(isset($user)): ?>
+                    <li><a href="#tab-user" data-toggle="tab">НПР</a></li>
+                <?php  endif; ?>
+                <?php if(isset($user) and $user->in_vars('kafedra')): ?>
+                    <li><a href="#tab-kafedra"  data-toggle="tab">Кафедра</a></li>
+                <?php endif; ?>
+                <!--<li ><a href="#user_tab3"  data-toggle="tab">UNID</a></li> -->
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane" id="tab-user">
+
+                    <ul class="nav nav-tabs nav-stacked">
+                        <li class="divider"></li>
+
+                        <li class="nav-header">Отчёт</li>
+                        <li><a href="<?php echo $this->url('user',array('controller'=>'Table','id_table'=>1));?>">Тема НИР</a></li>
+                        <li><a href="<?php echo $this->url('user',array('controller'=>'Table','id_table'=>2));?>" type="reports" base='scientific_meetings'>Научные собрания / выставки
+                            </a></li>
+                        <li><a href="<?php echo $this->url('user',array('controller'=>'Table','id_table'=>3));?>" type="reports" base='publication'>Публикации</a></li>
+                        <li><a href="<?php echo $this->url('user',array('controller'=>'Table','id_table'=>4));?>" type="reports" base='honors' >Награды и поощрения</a></li>
+                        <li><a href="<?php echo $this->url('user',array('controller'=>'Table','id_table'=>5));?>" type="reports" base='rucovodstvonirs'>Руководство НИРС</a></li>
+                        <!--                        <li><a href="--><?php //echo $this->url('user',array('controller'=>'Table','action'=>'append','id'=>6));?><!--"" type="reports" base='reports_training'>Повышение квалификации</a></li>-->
+                        <li class="divider"></li>
+                        <li class="nav-header">План</li>
+                        <li><a href="<?php echo $this->url('user',array('controller'=>'Table','id_table'=>7));?>" type='plan' base='plan_themenir'>Тема НИР</a></li>
+                        <li><a href="<?php echo $this->url('user',array('controller'=>'Table','id_table'=>8));?>" type='plan' base='plan_sm'>Научные собрания</a></li>
+                        <li><a href="<?php echo $this->url('user',array('controller'=>'Table','id_table'=>9));?>" type='plan' base='plan_publication'>Подготовка публикаций</a></li>
+
+
+                    </ul>
+                </div>
+                <!--                Кафедра       -->
+                <div class="tab-pane" id="tab-kafedra">
+                    <ul class="nav nav-tabs nav-stacked">
+                        <li class="nav-header">Персонал</li>
+                        <li><a href="<?php echo $this->url('kafedra/default',array('action'=>'personal')); ?>">Управление</a></li>
+                        <li class="nav-header">Отчёт</li>
+                        <li><a href="<?php echo $this->url('kafedra',array('controller'=>'Tablekafedra','id_table'=>11));?>">Тематический отчёт по НИД</a></li>
+                        <li><a href="<?php echo $this->url('kafedra',array('controller'=>'Tablekafedra','id_table'=>12));?>" >Участие в научных собраниях</a></li>
+                        <li><a href="<?php echo $this->url('kafedra',array('controller'=>'Tablekafedra','id_table'=>13));?>">Руководство НИРС</a></li>
+                        <li><a href="<?php echo $this->url('kafedra',array('controller'=>'Tablekafedra','id_table'=>14));?>">Отчёт по РИД</a></li>
+                        <li class="divider"></li>
+                        <li class="nav-header">План</li>
+
+                        <li><a href="<?php echo $this->url('kafedra',array('controller'=>'Tablekafedra','id_table'=>16));?>" >Тематический план по НИД</a></li>
+                        <li><a href="<?php echo $this->url('kafedra',array('controller'=>'Tablekafedra','id_table'=>17));?>">Организация научных собраний</a></li>
+                        <li><a href="<?php echo $this->url('kafedra',array('controller'=>'Tablekafedra','id_table'=>9));?>" >План РИД</a></li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="span8" style="padding: 10px">
+
+            <?php echo $this->content; ?>
+            <!--Body content-->
+        </div>
+        <?php if(isset($user)): ?>
+
+            <div class="span2">
+                <ul class="nav nav-tabs nav-stacked">
+                    <li class="divider"></li>
+                    <li class="nav-header">
+                        <?php echo $user->name;  ?>
+                    </li>
+
+                    <li><a href="<?php echo  $this->url('user'); ?>"><i class="icon-user"></i>Личный кабинет</a></li>
+                    <li><a href="<?php echo $this->url('user',array('controller'=>'Document'));?>" base='get_file'><i class="icon-book"></i>Документы</a></li>
+                    <li><a href="<?php echo $this->url('user', array('controller'=>'Archive')); ?>" ><i class="icon-book"></i>Архив</a></li>
+                    <!--                    <li><a href="--><?php //echo $this->url('user',array('controller'=>'Setting','action'=>'user'));?><!--"><i class="icon-edit"></i>Настройки</a></li>-->
+                    <li class="divider"></li>
+                    <?php if($user->in_vars('kafedra')): ?>
+                        <li class="nav-header">Кафедра</li>
+                        <li><a href="<?php echo  $this->url('kafedra'); ?>"><i class="icon-user"></i>Информация</a></li>
+                        <li><a href="<?php echo $this->url('kafedra',array('controller'=>'Document'));?>" base='get_file'><i class="icon-book"></i>Документы</a></li>
+                        <li><a href="<?php echo $this->url('kafedra',array('controller'=>'Setting','action'=>'kafedra'));?>"><i class="icon-edit"></i>Настройки</a></li>
+                    <?php endif; ?>
+
+                </ul>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+
+<hr>
+
+<footer>
+
+    <div class="navbar">
+        <div class="navbar-inner navbar-fixed-bottom">
+            <div class="container">
+                <div class="brand" href="#">
+
+                    <p>&copy; 2013 - <?php echo date('Y'); ?> КГУ им. Н.А. Некрасова </p>
+                </div>
+                <?php if( isset($user) ): ?>
+                    <div class="navbar-static-top">
+                        <ul class="nav">
+                            <!--                            <li><a href="--><?php //echo  $this->url('user',array('controller'=>'user','action'=>'kontact')); ?><!--" onclick=""><i class="icon-edit"></i>Контакты</a></li>-->
+                            <!--                            <li><a href="--><?php //echo  $this->url('help'); ?><!--"><i class="icon-ok"></i>Справка</a></li>-->
+
+<!--                                <li  class="kaf_hidden" ><a href="#application"> <i class="icon-edit"></i>Администратор</a></li>-->
+
+                        </ul>
+
+                        <ul id="user_panel" class="nav pull-right" >
+                            <li>
+                                <div class="span2 pull-right">
+                                    <p>Телефон: <b>39-16-10</b><br> Внутренний : <b>210</b></p>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                <?php endif; ?> <!--  -->
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+
+<?php echo $this->inlineScript() ?>
+
+</body>
+</html>

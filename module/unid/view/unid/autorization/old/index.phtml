@@ -1,0 +1,94 @@
+
+<script type="application/javascript" src="./js/Autorization/API.js"></script>
+
+
+<?php echo $this->showMessages(); ?>
+
+<h1 align="center">Добро пожаловать в модуль сбора данных<br>
+    <p style="color: silver">отдела сопровождения научных исследований
+        <br>
+        КГУ им. Н. А. Некрасова.
+    </p>
+</h1>
+
+<div class="row-fluid" style="margin-bottom: 40px;">
+    <p align="center">Для работы с системой необходима обязательная
+        <a href="<?php echo $this->url('Registration',array('action'=>'index')); ?>">регистрация</a>.
+        Если вы уже зарегистрированы в системе пройдите авторизацию.
+        <!--        <br>-->
+        <!--    Для восстановления пароля перейдите на <a href="#"> этой ссылке</a>-->
+    </p>
+
+</div>
+
+<hr>
+<ul class="nav nav-pills">
+    <li class="active" ><a href="#user_tab1" data-toggle="tab">Научно педагогический сотрудник</a></li>
+    <li ><a href="#user_tab2"  data-toggle="tab">Кафедра</a></li>
+    <!--<li ><a href="#user_tab3"  data-toggle="tab">UNID</a></li> -->
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active" id="user_tab1">
+        <div id="autorization_npr" class="form-horizontal auto"  style="margin-left: 16%">
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">Логин</label>
+                <div class="controls">
+                    <input type="text" id="inputLogin" placeholder="Введите логин" class="span3">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputPassword" >Пароль</label>
+                <div class="controls">
+                    <input type="password" id="inputPassword" placeholder="Введите пароль" class="span3">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" id="btn-autorization" class="btn btn-primary span3" style="margin-left: 0px;">
+                        <div id="text_btn_autoriz">  Вход
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <a href="<?php echo $this->url('Registration', array('action'=>'returnpassword')); ?>">Забыли пароль?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane" id="user_tab2">
+        <div id="autorization_kaf" class="form-horizontal" style="margin-left: 16%">
+            <div class="control-group">
+                <label  class="control-label" for="log1">Выберите кафедру</label>
+                <div class="controls">
+                    <label type='select'>
+                        <select class="search-query span3" id='login-kaf' type="text">
+                            <?php foreach($kafedra as $key => $val):  ?>
+                                <option name="<?php echo $key; ?>"><?php echo $val; ?></option>
+                            <?php endforeach; ?>
+
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="pas1">Пароль</label>
+                <div class="controls">
+                    <input type="password" id="password-kaf" placeholder="Введите пароль" class="span3">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <button id="btn-autorization-kafedra" class="btn btn-primary span3" style="margin-left: 0px;">Войти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="user_tab3">
+        Место для Администрирования очень важное место) Доделать в последнюю очередь
+    </div>
+</div>
+
+

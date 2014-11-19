@@ -1,0 +1,82 @@
+
+<h1>Кафедра :<?php echo $user->kafedra->name_kaf; ?></h1>
+<ul>
+    <li>Заведующий кафедрой: <?php echo $user->get(array('familie', 'name' ,'gname'))  ?></li>
+    <li>План: <?php echo $user->__year + 1; ?></li>
+    <li>Отчёт: <?php echo $user->__year; ?></li>
+</ul>
+
+<table class="table table-bordered table-hover">
+    <tbody>
+    <tr>
+        <td>Персонал</td>
+        <td>Авториз.</td>
+        <td>Статус</td>
+    </tr>
+    </tbody>
+    <?php foreach($personal as $user): ?>
+        <tr>
+            <td><?php echo $user->get(array('familie','name','gname')); ?>
+
+                <br>
+                <a  href="mailto:<?php echo $user->email; ?>" >
+                    <?php echo $user->email; ?>
+                </a>
+            </td>
+            <td>
+
+                    Логин: <?php echo $user->login; ?>
+                <br>
+                    Пароль: <?php echo $user->password; ?>
+
+            </td>
+
+            <td>
+
+                <?php if($user->status_sost): ?>
+
+                <form method="post">
+                    <input class="hidden" name="login" value="<?php  echo $user->login;?>">
+                    <div class="dropdown">
+                        <a id="drop001" class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" type="button">
+                            <?php echo $user->status; ?>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="drop001" role="menu">
+                            <li><button class="btn-link" type="submit">Отправить на доработку</button></li>
+                        </ul>
+                    </div>
+                </form>
+                <?php else: ?>
+                    <?php echo $user->status; ?>
+
+            <?php endif; ?>
+            </td>
+        </tr>
+
+    <?php endforeach;?>
+</table>
+<!---->
+<!--<div class="span12 table-bordered">-->
+<!--<a  href="--><?php //echo $this->url('kafedra',array('controller'=>'News','action'=>'append','id_table'=>0)); ?><!--" module="true">-->
+<!--    <i class="icon-plus"></i>-->
+<!--    Добавление новостей-->
+<!--</a>-->
+<!--</div>-->
+<!---->
+<!--<h2 align="center" num_pages="1">Новости</h2>-->
+<!--<ul class="pager">-->
+<!--    <li class="previous">-->
+<!--        <a href="#" id="news_dec">&larr; Назад</a>-->
+<!--    </li>-->
+<!--    <li class="next">-->
+<!--        <a href="#" id="news_inc">Вперед &rarr;</a>-->
+<!--    </li>-->
+<!--</ul>-->
+<!--<hr>-->
+<!--<div id="list_news">-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--</div>-->

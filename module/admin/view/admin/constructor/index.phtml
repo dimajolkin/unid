@@ -1,0 +1,41 @@
+<script type="application/javascript" src="/js/Admin/constructor.js"></script>
+<div class="row">
+    <div class="well">
+        <div class="controls controls-row">
+            <div class="span6">
+                <select class="span6" id="select_table">
+                    <?php foreach($tables as $obj): ?>
+                        <option name="<?php echo $obj->id; ?>" >
+                            <?php echo $obj->menu; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row" id="table_pole_edit">
+    <?php
+    if(isset($form)):
+      ?>
+        <h1 table="<?php echo $tableinfo->name_table;?>"><?php echo $tableinfo->menu;  ?></h1>
+        <?php
+    echo $this->form()->openTag($form);
+    foreach( $form->caps as  $cap  ):
+        ?>
+        <div class="cell" >
+            <?php echo $this->formRow($form->get( $cap )) ?>
+        </div>
+    <?php endforeach;
+    endif;?>
+    <div class="cell">
+        <button type="submit"
+                validate
+                style="width: 100%"
+                class="btn btn-success" ><i class="icon-ok"></i> Сохранить
+        </button>
+    </div>
+</div>
+
