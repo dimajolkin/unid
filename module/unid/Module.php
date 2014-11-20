@@ -30,7 +30,6 @@ class Module
 //    }
     public function init(ModuleManager $manager)
     {
-
         $events = $manager->getEventManager();
         $sharedEvents = $events->getSharedManager();
 
@@ -51,10 +50,10 @@ class Module
             }
             $controller = $e->getTarget();
             // var_dump(get_class($controller));
-            if (get_class($controller) == 'unid\Controller\UserController')         {
+            if (get_class($controller) == 'unid\Controller\UserController'){
 
             }
-            if (get_class($controller) == 'unid\Controller\ArchiveController')         {
+            if (get_class($controller) == 'unid\Controller\ArchiveController'){
                 //     $controller->layout('layout/archive');
 
             }

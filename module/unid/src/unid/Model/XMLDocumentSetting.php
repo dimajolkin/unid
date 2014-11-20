@@ -21,7 +21,7 @@ class XMLDocumentSetting {
 
             if(!empty($other_option)){
                 foreach($other_option as $name => $val){
-                   // var_dump($name);
+                    // var_dump($name);
 
                     $options[$name_table][$name] = $val;
                 }
@@ -45,7 +45,7 @@ class XMLDocumentSetting {
 
                         $options[$table][$name] = $opt;
 
-                      //  var_dump($options[$table]);
+                        //  var_dump($options[$table]);
                     }
 
 
@@ -111,6 +111,7 @@ class XMLDocumentSetting {
 
     function getKafOption(Data $post = null, Data $personal = null){
 
+
         $logins = $personal->getLogins();
 
         $options = array();
@@ -121,14 +122,14 @@ class XMLDocumentSetting {
             ));
 
             self::getOptionTable($options, array(
-                'scientific_meetings',
-                'rucovodstvonirs',
-                'honors'
-            ), array(
-                'append_cell_fio'=>true,
-                'find_cell'=> array('login'=>$logins)
-            )
-        );
+                    'scientific_meetings',
+                    'rucovodstvonirs',
+                    'honors'
+                ), array(
+                    'append_cell_fio'=>true,
+                    'find_cell'=> array('login'=>$logins)
+                )
+            );
             //  var_dump($options);
 
         }elseif($post->document == 'reports_rid')
@@ -143,19 +144,20 @@ class XMLDocumentSetting {
 
         }elseif($post->document == 'plan_nid')
         {
-            self::getOptionTable($options, array('kaf_plan_reports_to_nid'), 'id_kaf');
+            self::getOptionTable($options, 'kaf_thematic_plan_to_nid', 'id_kaf');
 
-            self::getOptionTable($options, 'kaf_plan_sm',
-                array(
-            'append_cell_fio'=>true,
-            'find_cell'=> array('login'=>$logins)
-        ));
+            self::getOptionTable($options, 'kaf_plan_sm',array(
+                'append_cell_fio'=>true,
+                'find_cell'=> 'id_kaf'
+            ));
+
 
         }elseif($post->document == 'plan_rid')
         {
-            self::getOptionTable($options, array(
-                'plan_publication'
-            ), array('login'=>$logins));
+            var_dump($logins);
+            self::getOptionTable($options, 'plan_publication', array(
+                'find_cell'=> array('login'=>$logins)
+            ));
 
         }
 

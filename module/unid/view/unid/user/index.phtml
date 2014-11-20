@@ -7,10 +7,14 @@
     <div class="controls controls-row">
         <div class="span3">
             <div class="control-group">
-                <img style="border-radius: 5px; box-s hadow: 0 0 10px rgba(0,0,0,0.5);" src="./img/empty.jpg">
+<!--                <img style="border-radius: 5px; box-s hadow: 0 0 10px rgba(0,0,0,0.5);" src="./img/empty.jpg">-->
+                <div class="avatar" title="https://ru.gravatar.com/">
+<!--                --><?php //echo $this->gravatar($user->email) ?>
+                    <img src="http://www.gravatar.com/avatar/<?php echo md5(strtolower($this->user->email));  ?>">
+                </div>
             </div>
 <!--            <i class="icon-edit"></i><a href="--><?php //echo $this->url('user',array('controller'=>'table','action'=>'edit','id_table'=>22,'id'=>$user->id));?><!--">Редактировать</a>-->
-               <i class="icon-edit"></i><a href="<?php echo $this->url('user/default',array('action'=>'edit'));?>">Редактировать</a>
+               <i class="icon-edit"></i><a href="<?php echo $this->url('user/default',array('action'=>'edit','id_table'=>22, 'id'=>$user->id));?>">Редактировать</a>
         </div>
 
         <div class="span6">
@@ -20,7 +24,7 @@
                         <?php if($user->name_kaf != ''): ?>
                         <?php echo $user->name_kaf;?> </li>
                         <?php else: ?>
-                        <a ajax-href="<?php echo $this->url("user",array("controller"=>"user","action"=>"appendinkaf")); ?>" href="#" modal="true" content="body"><i class="icon-plus"></i> Добавить кафедру</a>
+                        <a ajax-href="<?php echo $this->url("user/default",array("controller"=>"user","action"=>"appendinkaf")); ?>" href="#" modal="true" content="body"><i class="icon-plus"></i> Добавить кафедру</a>
                         <?php endif; ?>
 
 

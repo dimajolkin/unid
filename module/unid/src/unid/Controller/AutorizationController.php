@@ -22,6 +22,11 @@ class AutorizationController extends AbstractActionController
 
     function indexAction()
     {
+        //var_dump($this->getRequest()->getServer('HTTP_USER_AGENT'));
+        if(stristr($this->getRequest()->getServer('HTTP_USER_AGENT'), 'MSIE') )
+        {
+            return $this->redirect()->toRoute('Autorization',array('action'=>'installbrowser'));
+        }
         //$this->flashMessenger()->addErrorMessage('Внимание! Система ещё не включена. ');
         //Загрузка списка кафедр
         $adapter = $this->getServiceLocator()->get('Adapter');
@@ -41,7 +46,12 @@ class AutorizationController extends AbstractActionController
     {
 
     }
+  function installbrowserAction()
+  {
 
+
+
+  }
     function inputajaxAction()
     {
 

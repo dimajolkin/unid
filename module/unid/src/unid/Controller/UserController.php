@@ -29,7 +29,7 @@ class UserController extends BaseActionController
 
 
     function  getTable($nametable = 'users'){
-        $table =  new DataTable($this->getServiceLocator()->get('Adapter'),'__structure_stable');
+        $table =  new DataTable(self::getAdapter(),'__structure_stable');
         return $table->get(array('table_'=>$nametable));
 
     }
@@ -42,6 +42,10 @@ class UserController extends BaseActionController
 
     function indexAction()
     {
+
+        //$this->user = $this->getEvent()->getViewModel()->getVariable('user');
+
+
         $view =  new ViewModel();
         $UserTale = new UserTable(self::getAdapter(),self::USERS);//$this->user;
         $user = $UserTale->get(array('login'=>$this->user->login))->current();
@@ -60,18 +64,6 @@ class UserController extends BaseActionController
             $status->setStatus(StatusWork::BEGIN_STATUS, $user);
         }
         $view->setVariable('status',$user_statuswork);
-//var_dump();
-  //      var_dump($this->user);
-
-//        $storage =  new UserStorage();
-//        if(isset($this->user->kafedra)){
-//            $user->kafedra = $this->user->kafedra;
-//            $user->__year = $this->user->__year;
-//            $storage->set('user', $user);
-//        } else {
-//            $storage->set('user',$user);
-//        }
-
 
         $TableKafedra = new  DataTable(self::getAdapter(),self::TABLE_PERSONAL_KAFEDRA );
         $skaf = $TableKafedra->get(array('login'=>$user->login))->current();
@@ -138,9 +130,9 @@ class UserController extends BaseActionController
        // $login = $this->params('id_table');
         //$login = 'root';
         $login  = $this->user->login;
+
         $request = $this->getRequest();
         $post = new Data();
-
         if ($request->isPost())
         {
             $post->exchangeArray($request->getPost());

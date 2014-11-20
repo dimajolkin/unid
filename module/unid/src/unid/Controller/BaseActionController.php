@@ -18,15 +18,12 @@ class BaseActionController extends AbstractActionController
 
     function __construct()
     {
-
-
-            $Auth = new Autorization();
+        $Auth = new Autorization();
             // var_dump($Auth->get());
             if( $Auth->get() != null ){
 
                 $this->user = $Auth->get();
-            } else
-            {
+            } else {
                 //$this->redirect()->toRoute('home');
                 header("Location: / ");
             }
@@ -45,9 +42,11 @@ class BaseActionController extends AbstractActionController
         return $storgate_msg;
     }
 
+
     function getAdapter(){
         return $this->getServiceLocator()->get('Adapter');
     }
+
     function appendJavaScript($file_name = null){
         $script = $this->getServiceLocator()->get('viewhelpermanager')->get('inlineScript');
 

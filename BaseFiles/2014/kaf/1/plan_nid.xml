@@ -1,0 +1,438 @@
+<?xml version="1.0"?><?mso-application progid="Excel.Sheet"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"  xmlns:o="urn:schemas-microsoft-com:office:office"  xmlns:x="urn:schemas-microsoft-com:office:excel"  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"  xmlns:html="http://www.w3.org/TR/REC-html40"  >
+<Styles >
+<Style ss:ID="Default"  ss:Name="Normal"  >
+<Alignment ss:Vertical="Bottom"  />
+<Borders/>
+<Font ss:FontName="Calibri"  x:CharSet="204"  x:Family="Swiss"  ss:Size="8"  ss:Color="#000000"  />
+<Interior/>
+<NumberFormat/>
+<Protection/>
+</Style>
+<Style ss:ID="s71"  >
+<Font ss:FontName="Calibri"  x:CharSet="204"  x:Family="Swiss"  ss:Size="8"  ss:Color="#000000"  />
+</Style>
+<Style ss:ID="s73"  >
+<Alignment ss:Horizontal="Center"  ss:Vertical="Center"  ss:WrapText="1"  />
+<Borders >
+<Border ss:Position="Bottom"  ss:LineStyle="Continuous"  ss:Weight="2"  />
+<Border ss:Position="Left"  ss:LineStyle="Continuous"  ss:Weight="2"  />
+<Border ss:Position="Right"  ss:LineStyle="Continuous"  ss:Weight="2"  />
+<Border ss:Position="Top"  ss:LineStyle="Continuous"  ss:Weight="2"  />
+</Borders>
+<Font ss:FontName="Arial"  x:CharSet="204"  x:Family="Swiss"  ss:Size="8"  ss:Color="#000000"  ss:Bold="1"  />
+</Style>
+<Style ss:ID="s75"  >
+<Alignment ss:Horizontal="Center"  ss:Vertical="Bottom"  />
+<Font ss:FontName="Calibri"  x:CharSet="204"  x:Family="Swiss"  ss:Size="8"  ss:Color="#000000"  />
+</Style>
+<Style ss:ID="s77"  >
+<Alignment ss:Horizontal="Center"  ss:Vertical="Bottom"  />
+<Borders >
+<Border ss:Position="Top"  ss:LineStyle="Continuous"  ss:Weight="1"  />
+</Borders>
+<Font ss:FontName="Calibri"  x:CharSet="204"  x:Family="Swiss"  ss:Size="8"  ss:Color="#000000"  />
+</Style>
+<Style ss:ID="s80"  >
+<Alignment ss:Horizontal="Center"  ss:WrapText="1"  />
+<Borders >
+<Border ss:Position="Bottom"  ss:LineStyle="Continuous"  ss:Weight="1"  />
+<Border ss:Position="Left"  ss:LineStyle="Continuous"  ss:Weight="1"  />
+<Border ss:Position="Right"  ss:LineStyle="Continuous"  ss:Weight="1"  />
+<Border ss:Position="Top"  ss:LineStyle="Continuous"  ss:Weight="1"  />
+</Borders>
+<Font ss:FontName="Arial"  x:CharSet="204"  x:Family="Swiss"  ss:Size="8"  ss:Color="#000000"  />
+</Style>
+<Style ss:ID="s81"  >
+<Alignment ss:Horizontal="Center"  ss:Vertical="Center"  ss:WrapText="1"  />
+<Borders >
+<Border ss:Position="Bottom"  ss:LineStyle="Continuous"  ss:Weight="1"  />
+<Border ss:Position="Left"  ss:LineStyle="Continuous"  ss:Weight="1"  />
+<Border ss:Position="Right"  ss:LineStyle="Continuous"  ss:Weight="1"  />
+<Border ss:Position="Top"  ss:LineStyle="Continuous"  ss:Weight="1"  />
+</Borders>
+<Font ss:FontName="Arial"  x:CharSet="204"  x:Family="Swiss"  ss:Size="8"  ss:Color="#000000"  ss:Bold="1"  />
+</Style>
+<Style ss:ID="s82"  >
+<Alignment ss:Horizontal="Center"  ss:Vertical="Bottom"  />
+<Font ss:FontName="Calibri"  x:CharSet="204"  x:Family="Swiss"  ss:Size="8"  ss:Color="#000000"  />
+</Style>
+<Style ss:ID="s83"  >
+<Alignment ss:Horizontal="Center"  ss:Vertical="Bottom"  />
+<Font ss:FontName="Calibri"  x:CharSet="204"  x:Family="Swiss"  ss:Size="8"  ss:Color="#000000"  />
+</Style>
+</Styles>
+<Worksheet ss:Name="Тематический план по НИД"  >
+<Table >
+<Column ss:StyleID="s71"  ss:AutoFitWidth="0"  ss:Width="120.5"  />
+<Column ss:StyleID="s71"  ss:AutoFitWidth="0"  ss:Width="120.5"  />
+<Column ss:StyleID="s71"  ss:AutoFitWidth="0"  ss:Width="120.75"  />
+<Column ss:StyleID="s71"  ss:AutoFitWidth="0"  ss:Width="150.75"  />
+<Column ss:StyleID="s71"  ss:AutoFitWidth="0"  ss:Width="150.25"  />
+<Column ss:StyleID="s71"  ss:AutoFitWidth="0"  ss:Width="150"  />
+<Row >
+<Cell ss:MergeAcross="5"  ss:StyleID="s75"  >
+<Data ss:Type="String"  >
+Министерство образования и науки Российской Федерации</Data>
+</Cell>
+</Row>
+<Row >
+<Cell ss:MergeAcross="5"  ss:StyleID="s75"  >
+<Data ss:Type="String"  >
+Костромской государственный университет имени Н.А. Некрасова&quot;</Data>
+</Cell>
+</Row>
+<Row ss:Index="6"  >
+<Cell >
+<Data ss:Type="String"  >
+1. Кафедра:Demo_kafedra</Data>
+</Cell>
+</Row>
+<Row >
+<Cell >
+<Data ss:Type="String"  >
+2. Руководитель:Ёлкин232 Дмитрий Владимирович </Data>
+</Cell>
+</Row>
+<Row >
+<Cell >
+<Data ss:Type="String"  />
+</Cell>
+</Row>
+<Row ss:Height="15"  >
+<Cell ss:MergeAcross="5"  ss:StyleID="s82"  >
+<Data ss:Type="String"  >
+Тематический план по НИД</Data>
+</Cell>
+</Row>
+<Row >
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+Тема НИР</Data>
+</Cell>
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+Руководитель НИР</Data>
+</Cell>
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+Участники НИР</Data>
+</Cell>
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+Финансирование НИР</Data>
+</Cell>
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+Планируемые результаты</Data>
+</Cell>
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+Руководство НИРС</Data>
+</Cell>
+</Row>
+<Row >
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+122</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+21</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+32</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+Ёлкин Дмитрий Владимирович </Data>
+</Cell>
+</Row>
+<Row >
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+1231</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+23213</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+123213</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+123213</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+4324123</Data>
+</Cell>
+</Row>
+<Row >
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+122</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+Ёлкин Дмитрий Владимирович </Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+</Row>
+<Row ss:Height="15"  >
+<Cell ss:StyleID="s83"  >
+<Data ss:Type="String"  />
+</Cell>
+</Row>
+<Row ss:Height="15"  >
+<Cell >
+<Data ss:Type="String"  >
+Отчёт утверждён на заседании кафедры.</Data>
+</Cell>
+</Row>
+<Row ss:Height="15"  >
+<Cell ss:StyleID="s83"  >
+<Data ss:Type="String"  />
+</Cell>
+</Row>
+<Row ss:Height="15"  >
+<Cell >
+<Data ss:Type="String"  >
+Зав. кафедрой _______________________________ Ёлкин232 Дмитрий Владимирович </Data>
+</Cell>
+</Row>
+</Table>
+<WorksheetOptions >
+<PageSetup >
+<Layout x:Orientation="Landscape"  />
+<Header x:Margin="0.4"  />
+<Footer x:Margin="0.4"  />
+<PageMargins x:Bottom="0.4"  x:Left="0.4"  x:Right="0.4"  x:Top="0.4"  />
+</PageSetup>
+<XMLPrint >
+<ValidPrinterInfo/>
+<PaperSizeIndex >
+9</PaperSizeIndex>
+<HorizontalResolution >
+600</HorizontalResolution>
+<VerticalResolution/>
+</XMLPrint>
+</WorksheetOptions>
+</Worksheet>
+<Worksheet ss:Name="Организация научных собраний"  >
+<Table >
+<Column ss:StyleID="s71"  ss:AutoFitWidth="0"  ss:Width="120.5"  />
+<Column ss:StyleID="s71"  ss:AutoFitWidth="0"  ss:Width="120.5"  />
+<Column ss:StyleID="s71"  ss:AutoFitWidth="0"  ss:Width="120.75"  />
+<Column ss:StyleID="s71"  ss:AutoFitWidth="0"  ss:Width="150.75"  />
+<Column ss:StyleID="s71"  ss:AutoFitWidth="0"  ss:Width="100.75"  />
+<Row ss:Height="15"  >
+<Cell ss:MergeAcross="5"  ss:StyleID="s82"  >
+<Data ss:Type="String"  >
+Организация научных собраний</Data>
+</Cell>
+</Row>
+<Row >
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+ФИО</Data>
+</Cell>
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+ФИО организаторов</Data>
+</Cell>
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+Название</Data>
+</Cell>
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+Cтатус</Data>
+</Cell>
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+Место и сроки проведения</Data>
+</Cell>
+<Cell ss:StyleID="s73"  >
+<Data ss:Type="String"  >
+Количество участников</Data>
+</Cell>
+</Row>
+<Row >
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+
+</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+Ёлкин Дмитрий Владимирович </Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+Название </Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+Статус </Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+Место и сроки проведения </Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+Количество участников </Data>
+</Cell>
+</Row>
+<Row >
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+
+</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+Ёлкин Дмитрий Владимирович </Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+32</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+54532</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+343</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+21123123</Data>
+</Cell>
+</Row>
+<Row >
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+
+</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+12</Data>
+</Cell>
+</Row>
+<Row >
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+
+</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+Ёлкин Дмитрий Владимирович </Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+32</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+54532</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+343</Data>
+</Cell>
+<Cell ss:StyleID="s80"  >
+<Data ss:Type="String"  >
+21123123</Data>
+</Cell>
+</Row>
+<Row ss:Height="15"  >
+<Cell ss:StyleID="s83"  >
+<Data ss:Type="String"  />
+</Cell>
+</Row>
+<Row ss:Height="15"  >
+<Cell >
+<Data ss:Type="String"  >
+Отчёт утверждён на заседании кафедры.</Data>
+</Cell>
+</Row>
+<Row ss:Height="15"  >
+<Cell ss:StyleID="s83"  >
+<Data ss:Type="String"  />
+</Cell>
+</Row>
+<Row ss:Height="15"  >
+<Cell >
+<Data ss:Type="String"  >
+Зав. кафедрой _______________________________ Ёлкин232 Дмитрий Владимирович </Data>
+</Cell>
+</Row>
+</Table>
+<WorksheetOptions >
+<PageSetup >
+<Layout x:Orientation="Landscape"  />
+<Header x:Margin="0.4"  />
+<Footer x:Margin="0.4"  />
+<PageMargins x:Bottom="0.4"  x:Left="0.4"  x:Right="0.4"  x:Top="0.4"  />
+</PageSetup>
+<XMLPrint >
+<ValidPrinterInfo/>
+<PaperSizeIndex >
+9</PaperSizeIndex>
+<HorizontalResolution >
+600</HorizontalResolution>
+<VerticalResolution/>
+</XMLPrint>
+</WorksheetOptions>
+</Worksheet>
+</Workbook>

@@ -6,3 +6,12 @@ footer {
     background: #c0c0c0;
     margin-bottom: 100px;
 }
+.avatar{
+
+}
+.avatar > img{
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 200px;
+    height: 200px;
+}
