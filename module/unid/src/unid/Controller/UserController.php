@@ -144,7 +144,10 @@ class UserController extends BaseActionController
         if ($request->isPost())
         {
             $post->exchangeArray($request->getPost());
+            $post->login = $login;
             $TableUser->update($post);
+
+            $this->redirect()->refresh();
         }
 
         // $user = self::getTable()->get(array('login'=>$login));

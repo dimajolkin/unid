@@ -81,7 +81,7 @@
 <Row >
 <Cell >
 <Data ss:Type="String"  >
-ФИО Ёлкин Дмитрий Владимирович </Data>
+ФИО Ёлкин2 Дмитрий Владимирович </Data>
 </Cell>
 </Row>
 <Row ss:Height="15"  >
@@ -135,8 +135,7 @@ ISBN</Data>
 <Row >
 <Cell ss:StyleID="s80"  >
 <Data ss:Type="String"  >
-Ёлкин Дмитрий Владимирович 
-Ёлкин Дмитрий Владимирович 
+Ёлкин2 Дмитрий Владимирович 
 Смирнова Людмила Владимировна 
 Смирнова Ирина Львовна 
 </Data>
@@ -181,7 +180,7 @@ ISBN</Data>
 <Row >
 <Cell ss:StyleID="s80"  >
 <Data ss:Type="String"  >
-Ёлкин Дмитрий Владимирович 
+Ёлкин2 Дмитрий Владимирович 
 Смирнова Ирина Львовна 
 </Data>
 </Cell>
@@ -224,16 +223,18 @@ ISBN 132</Data>
 <Row >
 <Cell ss:StyleID="s80"  >
 <Data ss:Type="String"  >
-Ёлкин Дмитрий Владимирович 
+Ёлкин2 Дмитрий Владимирович 
+Ёлкин2 Дмитрий Владимирович 
 </Data>
 </Cell>
 <Cell ss:StyleID="s80"  >
 <Data ss:Type="String"  >
-12</Data>
+2
+63</Data>
 </Cell>
 <Cell ss:StyleID="s80"  >
 <Data ss:Type="String"  >
-212</Data>
+123</Data>
 </Cell>
 <Cell ss:StyleID="s80"  >
 <Data ss:Type="String"  >
@@ -245,23 +246,23 @@ ISBN 132</Data>
 </Cell>
 <Cell ss:StyleID="s80"  >
 <Data ss:Type="String"  >
-1212</Data>
+3453</Data>
 </Cell>
 <Cell ss:StyleID="s80"  >
 <Data ss:Type="String"  >
-12</Data>
+b,jbj,</Data>
 </Cell>
 <Cell ss:StyleID="s80"  >
 <Data ss:Type="String"  >
-12</Data>
+gkugukj</Data>
 </Cell>
 <Cell ss:StyleID="s80"  >
 <Data ss:Type="String"  >
-12</Data>
+knkn</Data>
 </Cell>
 <Cell ss:StyleID="s80"  >
 <Data ss:Type="String"  >
-Scopus</Data>
+РИНЦ(ВАК), Web of Science</Data>
 </Cell>
 </Row>
 </Table>
