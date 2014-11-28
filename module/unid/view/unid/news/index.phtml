@@ -1,0 +1,46 @@
+<script type="application/ecmascript" src="/js/news/index.js"></script>
+<!--<div id="accordion2" class="accordion">-->
+<!--    <div class="accordion-group">-->
+<!--        <div class="accordion-heading">-->
+<!--            <a class="accordion-toggle collapsed" href="#collapseOne" data-parent="#accordion2" data-toggle="collapse">-->
+<!--                <i class="icon-plus"></i>-->
+<!--                Добавление новостей-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div id="collapseOne" class="accordion-body collapse" style="height: 0px;">-->
+<!--            <div class="accordion-inner">-->
+<!--                <div id="add_news">-->
+<!--                    <textarea cols="5"></textarea>-->
+<!--                    <div>-->
+<!--                        <button class="btn btn-success" style="float: left">Разместить</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<h2 align="center" num_pages="1">Новости</h2>-->
+
+
+
+        <?php foreach($news as $new):  ?>
+                <div class="news" >
+                    <button id="<?php echo $new->id; ?>" type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h4><?php echo $new->cap; ?></h4><time></time>
+                    <div class="text">
+                        <?php echo $new->text; ?>
+                    </div>
+
+                </div>
+        <?php  endforeach; ?>
+
+
+<!--<ul class="pager">-->
+<!--    <li class="previous">-->
+<!--        <a href="#" id="news_dec">&larr; Назад</a>-->
+<!--    </li>-->
+<!--    <li class="next">-->
+<!--        <a href="#" id="news_inc">Вперед &rarr;</a>-->
+<!--    </li>-->
+<!--</ul>-->

@@ -1,0 +1,97 @@
+<?php echo $this->doctype();
+//$this->storage = $this->getServiceLocator() ->get('Application\Model\MyAuthStorage');
+//$user = (isset($_SESSION['Zend_Auth']['user']))? $_SESSION['Zend_Auth']['user']:null;
+?>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <?php echo $this->headTitle('UNID '. $this->translate(' КГУ'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <?php echo $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+    ?>
+
+    <!-- Le styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+        ->prependStylesheet($this->basePath() . '/css/styleTable.css')
+        ->prependStylesheet($this->basePath() . '/css/news.css')
+    ?>
+
+    <!-- Scripts -->
+    <?php echo $this->headScript()
+        ->prependFile($this->basePath() . '/js/unid/lib.js')
+        ->prependFile($this->basePath().'/js/message/message.js')
+        ->prependFile($this->basePath() . '/js/bootstrap.js')
+        ->prependFile($this->basePath() . '/js/jquery.js')
+        ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+        ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+    ; ?>
+
+
+</head>
+<body>
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">Admin UNID</a>
+
+            <div class="navbar-static-top">
+                <ul class="nav">
+<!--                    <li  class="app_hidden" ><a href="--><?php //echo $this->url('interface',array('action'=>'user')); ?><!--" onclick=""><i class="icon-user"></i>Лич. кабинет</a></li>-->
+
+                    <li  class="app_hidden" ><a href="<?php echo $this->url('interface',array('action'=>'personal')); ?>" onclick=""><i class="icon-user"></i>Восст. Пароль</a></li>
+<!--                    <li  class="app_hidden" ><a href="--><?php //echo $this->url('DocumentAdmin'); ?><!--" onclick=""><i class="icon-user"></i>Отчёт</a></li>-->
+
+<!--                    <li  class="app_hidden" ><a href="--><?php //echo$this->url('constructor',array('action'=>'index')); ?><!--" onclick=""><i class="icon-user"></i>Конструктор</a></li>-->
+
+                    <!--                    <li  class="app_hidden" ><a href="--><?php //echo $this->url('user'); ?><!--" onclick=""><i class="icon-user"></i>Глоб переменные</a></li>-->
+
+                    <!--                    <li  class="app_hidden" ><a href="--><?php //echo $this->url('user'); ?><!--" onclick=""><i class="icon-user"></i>Пользователи</a></li>-->
+                    <!---->
+                    <!--                    <li  class="app_hidden" ><a href="--><?php //echo $this->url('user'); ?><!--" onclick=""><i class="icon-user"></i>Пользователи</a></li>-->
+                    <!---->
+
+                    <!--   <li  class="kaf_hidden" ><a href="#application" catalog="Message" >Сообщения</a></li> -->
+                </ul>
+
+                <ul id="user_panel" class="nav pull-right" >
+                    <li class="divider-vertical pull-right"></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <?php echo $user->get('name');  ?>
+                            <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <!--                            <li><a href="--><?php //echo  $this->url('user'); ?><!--"><i class="icon-user"></i>Лич. кабинет</a></li>-->
+                            <!--                            <li><a href="--><?php //echo  $this->url('user',array('controller'=>'user','action'=>'kontact')); ?><!--" onclick=""><i class="icon-edit"></i>Контакты</a></li>-->
+                            <!--                            <li><a href="--><?php //echo  $this->url('help'); ?><!--"><i class="icon-ok"></i>Справка</a></li>-->
+                            <!--                            <li class="divider"></li>-->
+                            <!--                            <li><a href="--><?php //echo  $this->url('user',array('controller'=>'user','action'=>'exit')); ?><!--"><i class="icon-share"></i>Выход</a></li>-->
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="container">
+        <?php echo $this->content; ?>
+        <hr>
+        <footer>
+            <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
+        </footer>
+    </div> <!-- /container -->
+
+</div>
+<?php echo $this->inlineScript() ?>
+</body>
+</html>

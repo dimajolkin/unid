@@ -1,0 +1,21 @@
+<?php
+echo $this->headTitle('Просмотр записи')
+?>
+
+<h1>Просмотр</h1>
+<div id="sys_msg"></div>
+<?php echo $this->showMessages(); ?>
+<div class="row-fluid">
+    <div class="row-fluid">
+        <?php
+        echo $this->form()->openTag($form);
+        foreach( $form->caps as  $cap  ):
+            ?>
+            <div class="cell" >
+                <?php echo $this->formRow($form->get( $cap )) ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?php  echo $this->form()->closeTag(); ?>
+
+</div>

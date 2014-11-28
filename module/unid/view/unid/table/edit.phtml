@@ -1,0 +1,20 @@
+<?php
+echo $this->headTitle('Редактор записи');
+?>
+
+<div class="row">
+    <h1>Редактор</h1>
+
+
+    <ul class="breadcrumb">
+        <li><a href="<?php echo $this->url(substr($this->url(),1,-1),array('id_table'=>$tableInfo->id,'id'=>'0','tab'=>'list')); ?>"><i class="icon-arrow-left"></i>Назад</a> <span class="divider">/</span></li>
+        <li class="active">Редактор</li>
+    </ul>
+
+    <div id="sys_msg">
+        <?php echo $this->showMessages(); ?>
+    </div>
+
+    <?php echo $this->form()->render($form); ?>
+
+</div>

@@ -1,0 +1,32 @@
+<h1>Справка</h1>
+
+
+<h1>Инструкция по работе с системой обработки информации по научно-исследовательской работе</h1>
+<hr>
+<body>
+<p>
+<h2><a href="./index.php?type=3&list=0&help=0">Введение</a></h2>
+<h2>Отчёт</h2>
+<ul>
+    <li><a href="./index.php?type=3&list=0&help=1"> Работа преподавателя с документами отчета</a></li>
+    <li><a href="./index.php?type=3&list=0&help=2">Тематический отчет по НИР</a></li>
+    <li><a href="./index.php?type=3&list=0&help=3">Научные собрания / выставки (вне вуза)</a></li>
+    <li><a href="./index.php?type=3&list=0&help=4">Публикации</a></li>
+    <li><a href="./index.php?type=3&list=0&help=5">Награды и поощрения</a></li>
+    <li><a href="./index.php?type=3&list=0&help=6">Руководство НИРС</a></li>
+</ul>
+<h2>План</h2>
+<ul>
+    <li><a href="./index.php?type=3&list=0&help=7">Тематический план НИР</a></li>
+</ul>
+</p>
+<hr>
+<?php
+if(isset($_GET['help'])){
+    $num = $_GET['help'];
+    require("./pages/type3/help/help$num.html");
+}
+
+?>
+
+</body>

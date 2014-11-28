@@ -1,0 +1,39 @@
+<div class="row-fluid">
+
+    <h1>Установка заведующего кафедрой</h1>
+    <hr>
+
+    <p>
+        На вашей кафедре нет заведующего.
+        Для корректной работы системы вам необходимо добавить его.
+    </p>
+    <p>
+        После выбора заведующего кафедрой. Повторите авторизацию на кафедру.
+    </p>
+
+    <form action="" method="post">
+        <div  class="form-search " >
+            <div class="input-append">
+                <input name="text" type="text" id="text-search" class="span12 search-query">
+                <button id='form-search-personal'  class="btn"><i class="icon-search"></i>Найти</button>
+            </div>
+        </div>
+    </form>
+    <br>
+    <form action="" method="post">
+        <table id='table_result' class="table table-bordered table-hover" style="margin-bottom: 10px">
+            <?php if(isset($list))
+                foreach($list as $obj):?>
+                    <tr>
+                        <td><?php echo $obj->get(array('familie','name','gname')); ?> </td>
+                        <td><?php echo $obj->email; ?></td>
+                        <td>
+                            <button name="login" value="<?php echo $obj->login; ?>" type="submit">Установить</button>
+                        </td>
+                    </tr>
+
+                <?php endforeach; ?>
+        </table>
+    </form>
+
+</div>

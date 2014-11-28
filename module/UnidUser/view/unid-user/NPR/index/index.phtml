@@ -1,0 +1,8 @@
+<h1>Hello NPR</h1>
+
+<div style="float:left; padding-right:16px;">
+    <?php echo $this->gravatar($this->zfcUserIdentity()->getEmail()) ?>
+</div>
+<h3> <?php echo $this->translate( $this->zfcUserDisplayName() ); ?></h3>
+
+<div style="clear:both;"></div>

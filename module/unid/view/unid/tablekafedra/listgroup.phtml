@@ -1,0 +1,96 @@
+
+<div class="accordion" id="accordion2">
+    <?php foreach($groups as $group): static $i; $i++ ?>
+
+
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo<?php echo $i; ?>">
+                    <?php echo $group; ?>
+                </a>
+            </div>
+            <div id="collapseTwo<?php echo $i; ?>" class="accordion-body collapse">
+                <div class="accordion-inner">
+
+                    <table id='table_content' class="table table-bordered table-hover" style="margin-bottom: 100px">
+                        <tbody>
+                        <tr>
+
+                            <td><b>ФИО</b></td>
+                            <?php foreach($tableInfo->boss_row as $boss => $boss_name): ?>
+                                <td calign="center" ><b id ='table_cap'><?php echo $boss_name; ?></b></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        </tbody>
+                        <?php
+
+                        if(isset($table_list))
+                            foreach ($table_list as $obj) :
+                                if($obj->$group_cell != $group) continue;
+                                ?>
+                                <tr>
+                                    <?php
+                                    $bool = true;
+                                    foreach($tableInfo->boss_row as $boss =>$boss_name):
+                                        if($bool): $bool = false;
+                                            ?>
+                                            <td>
+                                                <?php echo $obj->FIO; ?>
+                                            </td>
+                                            <td>
+
+
+                                                <div cell style="margin-left: 10px">
+                                                    <ul>
+                                                        <li class="dropdown">
+                                                            <a data-toggle="dropdown" class="dropdown-toggle" style="cursor: pointer;">
+                                                                <?php echo $obj->$boss; ?> <b class="caret"></b></a>
+                                                            <ul id="menu_navbar" class="dropdown-menu">
+                                                                <li class="nav-header"></li>
+                                                                <li>
+                                                                    <a  href="<?php echo $this->url('kafedra/table',array('action'=>'edit',  'id_table'=>$tableInfo->id ,'id'=>$obj->id,'login'=>$obj->login) ); ?>">
+                                                                        <i class="icon-edit"></i> Редактировать</a>
+                                                                </li>
+                                                                <?php if(isset($soavtor)): ?>
+
+                                                                    <li>
+                                                                        <a target="_blank"
+                                                                           href="<?php echo $this->url('user',array('controller'=>'Table','action'=>'editsoavtor','id_table'=>$tableInfo->id ,'id'=>$obj->id, 'login'=>$obj->login)); ?>">
+                                                                            <i class="icon-user"></i> Соавторство</a>
+                                                                    </li>
+                                                                <?php endif; ?>
+                                                                <?php if(isset($remove)): ?>
+                                                                    <li>
+                                                                        <a href="#" remove="<?php echo $this->url('kafedra',array('controller'=>'Tablekafedra','action'=>'remove','id_table'=>$tableInfo->id ,'id'=>$group->id)); ?>">
+                                                                            <i class="icon-remove"></i> Удалить</a>
+                                                                    </li>
+                                                                <?php endif; ?>
+
+                                                                <li class="nav-header"></li>
+                                                                <li><a href="#">Отмена</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </td>
+                                        <?php else: ?>
+                                            <td>
+                                                <?php echo $obj->$boss; ?>
+                                            </td>
+                                        <?php endif; ?>
+                                    <?php   endforeach; ?>
+                                </tr>
+
+
+
+                            <?php endforeach; ?>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    <?php endforeach; ?>
+
+</div>

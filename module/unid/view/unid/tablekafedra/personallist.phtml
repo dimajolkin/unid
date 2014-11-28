@@ -1,0 +1,89 @@
+
+<!--                <table id='table_result' class="table table-bordered table-hover" style="margin-bottom: 100px">-->
+<!--                    <tbody>-->
+<!--                    <tr>-->
+<!--                        <td calign="center"><b>Название</b></td>-->
+<!--                        <td>Состояние</td>-->
+<!--                    </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+
+<!--                <h1>Список Тем сотрудников кафедры</h1>-->
+
+<br>
+
+<table id='table_copy' class="table table-bordered table-hover" style="margin-bottom: 100px">
+    <tbody>
+    <tr>
+        <td width="5" style="margin-right: 10px"><b>#</b></td>
+
+        <?php foreach($tableInfo->boss_row as $boss => $boss_name): ?>
+            <td calign="center" ><b id ='table_cap'><?php echo $boss_name; ?></b></td>
+        <?php endforeach; ?>
+        <td>ФИО</td>
+        <td></td>
+
+
+
+    </tr>
+    </tbody>
+    <?php
+    if(isset($table_list))
+        foreach ($table_list as $group) : ?>
+            <tr>
+                <td>
+                    <?php static $num=1 ; echo $num++; ?>
+                </td>
+                <?php
+                $bool = false;
+                foreach($tableInfo->boss_row as $boss =>$boss_name):
+
+                    if(!$bool): $bool = true;
+                        ?>
+                        <td>
+
+                            <div cell style="margin-left: 10px">
+
+                                <div class="dropdown">
+                                    <a id="drop001" class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" type="button">
+                                        <?php echo $this->escapeHtml($group->$boss)?>
+                                        <b class="caret"></b>
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="drop001" role="menu">
+                                        <li class="nav-header"></li>
+                                        <!--
+                                        <li><a href="">
+                                        /Archive/view/3/975
+                                                <i class="icon-edit"></i> Редактировать</a></li> -->
+                                        <li><a target="_blank"
+
+                                               href="<?php echo $this->url('kafedra/archive',array('action'=>'view',  'id_table'=>$tableInfo->id ,'id'=>$group->id) ); ?>">
+                                                <i class="icon-flag"></i>Просмотр</a></li>
+
+                                        <li class="nav-header"></li>
+                                        <li><a href="#">Отмена</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    <?php else: ?>
+                        <td>
+                            <?php echo $group->$boss; ?>
+                        </td>
+                    <?php endif; ?>
+                    <td>
+                        <?php echo $group->get('FIO'); ?>
+                    </td>
+
+                    <td id_doc="<?php echo $group->get('id'); ?>" >
+
+                    </td>
+                <?php   endforeach; ?>
+            </tr>
+
+
+
+        <?php endforeach; ?>
+</table>
+

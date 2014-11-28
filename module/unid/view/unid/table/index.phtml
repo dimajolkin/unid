@@ -1,0 +1,62 @@
+
+<?php $this->headScript(); ?>
+
+<div class="controls-row">
+    <div class="pull-left">
+        <h1 style="
+        display: table-row "
+            id_table="<?php echo $this->tableInfo->id; ?>"
+            >
+            <div  style="color: #c0c0c0;
+                float: left;
+               margin-bottom: 20px;
+               margin-right: 10px;
+     ">
+                <?php echo $year; ?>  </div> <?php echo $group_name." \ ".$cap;  ?> </h1>
+    </div>
+
+    <?php if(file_exists(__DIR__.'/../help/'.$tableInfo->name_table.'.phtml')): ?>
+
+    <div class="pull-right">
+        <a cap="Справка" ajax-href="<?php echo $this->url('help', array('action'=>'pages','id'=>$tableInfo->name_table)); ?>"  content="body"
+            title="Справка"
+            modal="true"
+            href="#" class="btn">
+<!--            <i class="icon-question-sign"></i>-->
+            <img width="30px" height="25px" src="/img/icon-help.png">
+        </a>
+    </div>
+    <?php endif; ?>
+</div>
+
+<div id="sys_msg">
+    <?php echo $this->ShowMessages(); ?>
+</div>
+
+<div class="tabbable" style="margin: 0px;">
+    <ul class="nav nav-tabs">
+
+         <?php foreach($tabs as $tab =>$param): ?>
+            <li class="<?php echo $param['active']; ?>" >
+                <a href="#<?php echo $tab; ?>"   data-toggle="tab">
+                <?php echo $param['name']; ?>
+                </a>
+            </li>
+         <?php endforeach; ?>
+
+    </ul>
+
+    <div class="tab-content">
+
+        <?php foreach($tabs as $tab =>$param): ?>
+            <div class="tab-pane <?php echo $param['active']; ?>" id="<?php echo $tab; ?>" style="overflow: hidden;height: 100%;position: static;">
+                <div class="row-fluid">
+                    <?php echo $this->$tab; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+
+    </div>
+</div>
+
+

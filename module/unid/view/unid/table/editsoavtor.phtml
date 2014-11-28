@@ -1,0 +1,60 @@
+<h1>Редактор соавторств</h1>
+
+<ul class="breadcrumb">
+    <li><a href="<?php echo $this->url('user/table',array('id_table'=>$tableInfo->id,'id'=>'0','tab'=>'list')); ?>"><i class="icon-arrow-left"></i>Назад</a> <span class="divider">/</span></li>
+    <li class="active">Редактор</li>
+</ul>
+
+<doc  id="<?php echo $this->doc->get('id'); ?>" >
+
+    <div class="" id="sys_msg">
+
+    </div>
+<div class="alert">
+    <?php echo $this->doc->get($tableInfo->get('boss_row')); ?>
+</div>
+
+<div  class="form-search">
+    <div class="input-append">
+        <input type="text" id="text-search" class="span9 search-query" placeholder="Поиск по ФИО">
+        <button id='form-search-user' table="<?php echo $tableInfo->get('id');?>" id_doc="<?php echo $this->doc->get('id'); ?>" class="btn">Найти</button>
+    </div>
+</div>
+<br>
+<table id='table_result' class="table table-bordered table-hover" style="margin-bottom: 100px">
+    <tbody>
+    <tr>
+        <td calign="center"><b>ФИО</b></td>
+        <td>Состояние</td>
+    </tr>
+    </tbody>
+
+</table>
+
+<h1>Список соавторств</h1>
+<p>Записи в добавленные вами</p>
+<br>
+<table id='table_soavtor_user' class="table table-bordered table-hover" style="margin-bottom: 100px">
+    <tbody>
+    <tr>
+        <td calign="center" ><b>ФИО</b></td>
+
+        <td>Состояние</td>
+    </tr>
+    </tbody>
+    <tbody>
+    <?php
+    $boss = $tableInfo->get('boss_row');
+    if(isset($soavtor))
+        foreach ($soavtor as $group) :
+            ?>
+            <tr>
+                <td><?php echo $group->get('familie')." ".$group->get('name')." ".$group->get('gname'); ?></td>
+                <td id_doc="<?php echo $group->get('id'); ?>" >
+
+                </td>
+            </tr>
+        <?php endforeach; ?>
+
+    </tbody>
+</table>

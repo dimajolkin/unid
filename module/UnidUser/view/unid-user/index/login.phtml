@@ -1,0 +1,32 @@
+<h1 align="center">Добро пожаловать в модуль сбора данных<br>
+    <p style="color: silver">отдела сопровождения научных исследований
+        <br>
+        КГУ им. Н. А. Некрасова.
+    </p>
+</h1>
+
+<div class="row-fluid" style="margin-bottom: 40px;">
+    <p align="center">Для работы с системой необходима обязательная
+        <a href="#">регистрация</a>.
+        Если вы уже зарегистрированы в системе пройдите авторизацию.
+        <!--        <br>-->
+        <!--    Для восстановления пароля перейдите на <a href="#"> этой ссылке</a>-->
+    </p>
+
+</div>
+
+<hr>
+
+<?php if(!$this->zfcUserIdentity()): ?>
+    <!-- display the login form -->
+    <?php echo $this->zfcUserLoginWidget(); ?>
+
+<?php else: ?>
+    <!-- display the 'display name' of the user -->
+    <?php echo $this->zfcUserIdentity()->getDisplayname(); ?>
+<?php endif?>
+
+
+
+
+

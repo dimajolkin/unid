@@ -1,0 +1,59 @@
+<?php echo $this->doctype();
+//$this->storage = $this->getServiceLocator() ->get('Application\Model\MyAuthStorage');
+$user = (isset($_SESSION['Zend_Auth']['user']))? $_SESSION['Zend_Auth']['user']:null;
+?>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <?php echo $this->headTitle('UNID '. $this->translate(' КГУ'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <?php echo $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+    ?>
+
+    <!-- Le styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+        ->prependStylesheet($this->basePath() . '/css/styleTable.css')
+        ->prependStylesheet($this->basePath() . '/css/news.css')
+    ?>
+
+    <!-- Scripts -->
+    <?php echo $this->headScript()
+        ->prependFile($this->basePath() . '/js/animation/load.js')
+//        ->prependFile($this->basePath() . '/js/Table/API.js')
+        ->prependFile($this->basePath().'/js/message/message.js')
+        ->prependFile($this->basePath() . '/js/bootstrap.js')
+        ->prependFile($this->basePath() . '/js/jquery.js')
+        ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+        ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+    ; ?>
+
+
+</head>
+<body>
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">UNID</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row">
+
+    <div class="container">
+        <?php echo $this->content; ?>
+        <hr>
+        <footer>
+            <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
+        </footer>
+    </div> <!-- /container -->
+
+</div>
+<?php echo $this->inlineScript() ?>
+</body>
+</html>

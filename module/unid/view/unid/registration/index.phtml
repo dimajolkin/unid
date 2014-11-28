@@ -1,0 +1,69 @@
+<script type="application/javascript" src="./js/Registration/API.js"></script>
+<div  class="well well-small">
+    <a href="/">
+        <i class="icon-arrow-left" title="вернуться на главную"></i>Вернуться на страницу авторизиции
+    </a>
+</div>
+<hr>
+<h1>Регистрация</h1>
+
+
+<div id="sys_msg">
+    <!-- Поле для вывода сообщений -->
+</div>
+
+<form method="post" action="/Registration/save">
+    <div class="controls controls-row">
+
+        <div class="span3">
+
+            <?php foreach($array as $key=>$val): ?>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <input userinfo type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" class="col-sm-9" placeholder="<?php echo $val; ?>">
+                    </div>
+                </div>
+
+            <?php endforeach; ?>
+
+        </div>
+        <div class="span3">
+
+            <!--                <input type="text" class="span2 search-query">-->
+            <!--success-->
+            <div class="control-group ">
+                <div class="controls">
+                    <input type="text" name="login" id="login" class="span2" placeholder="Логин">
+                    <button id="login_valid" class="btn" title="Проверить логин на занятость"><i class=" icon-repeat"></i></button>
+                </div>
+            </div>
+            <!--                <input type="text" class="span2 search-query">-->
+            <!--success-->
+            <div class="control-group">
+                <div class="controls">
+                    <input type="password" id="password" name="password" class="span2" placeholder="Пароль">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <input type="password"  not id="password_2" class="span2" placeholder="Повторите ввод пароля">
+                </div>
+            </div>
+
+        </div>
+        <div class="span4">
+            <h3>Правила регистрации</h3>
+            <p>
+                Внимание. правила заполнения регистрационных полей:
+            <ul>
+<!--                <li>Логин: <i>Анлг. буквы без пробелов.</i></li>-->
+                <li>Пароль: <i>Длинной не менее 5 </i> </li>
+            </ul>
+            Регистрационные данные можно будет поменять в личном кабинете после авторизации.
+            </p>
+        </div>
+    </div>
+    <button type="submit" id="btn-register-user" class="btn-large btn-primary">Зарегистрировать</button>
+
+</form>

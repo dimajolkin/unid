@@ -1,0 +1,59 @@
+<h1>Список </h1>
+<h2 style="color: #c0c0c0"><?php echo $tableInfo->menu; ?>  </h2>
+<table id='table_content' class="table table-bordered table-hover" style="margin-bottom: 100px">
+    <tbody>
+    <tr>
+        <td width="5" style="margin-right: 10px"><b>#</b></td>
+        <?php foreach($tableInfo->boss_row as $boss => $boss_name): ?>
+        <td calign="center" ><b id ='table_cap'><?php echo $boss_name; ?></b></td>
+        <?php endforeach; ?>
+    </tr>
+    </tbody>
+    <?php
+
+    if(isset($table_list))
+        foreach ($table_list as $group) : ?>
+            <tr>
+                <td> <?php static $num=0 ; echo $num++; ?> </td>
+
+                <?php
+                $bool = true;
+                foreach($tableInfo->boss_row as $boss => $boss_name): ?>
+
+                    <?php if($bool): $bool = false; ?>
+                        <td >
+                            <div cell style="margin-left: 10px">
+                                <li class="dropdown">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" style="cursor: pointer;">
+                                        <?php echo $this->escapeHtml($group->get($boss))?> <b class="caret"></b></a>
+                                    <ul id="menu_navbar" class="dropdown-menu">
+                                        <li class="nav-header"></li>
+                                        <li><a target="_blank"
+                                               href="<?php echo $this->url('user/archive',array('action'=>'view',  'id_table'=>$tableInfo->get('id') ,'id'=>$group->get('id'))); ?>">
+                                                <i class="icon-flag"></i>Просмотр</a></li>
+
+                                           <?php if(isset($soavtor)): ?>
+                                            <li>
+                                                <a href="<?php echo $this->url('user/table',array('action'=>'editsoavtor','id_table'=>$tableInfo->get('id') ,'id'=>$group->get('id'))); ?>">
+                                                    <i class="icon-user"></i> Соавторство</a>
+                                            </li>
+                                        <?php endif; ?>
+
+                                        <li class="nav-header"></li>
+                                        <li><a href="#">Отмена</a></li>
+                                    </ul>
+                                </li>
+                            </div>
+                        </td>
+                    <?php else: ?>
+                        <td>
+                            <?php echo $group->get($boss); ?>
+                        </td>
+
+                    <?php endif; ?>
+                <?php endforeach; ?>
+
+            </tr>
+        <?php endforeach; ?>
+</table>
+

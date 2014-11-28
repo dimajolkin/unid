@@ -1,0 +1,150 @@
+
+<script type="application/javascript" src="./js/Autorization/API.js"></script>
+
+
+<?php echo $this->showMessages(); ?>
+
+
+<h1 align="center">Добро пожаловать в модуль сбора данных<br>
+    <p style="color: silver">отдела сопровождения научных исследований
+        <br>
+        КГУ им. Н. А. Некрасова.
+    </p>
+</h1>
+
+<div class="row-fluid" style="margin-bottom: 40px;">
+    <p align="center">Для работы с системой необходима обязательная
+        <a href="<?php echo $this->url('Registration',array('action'=>'index')); ?>">регистрация</a>.
+        Если вы уже зарегистрированы в системе пройдите авторизацию.
+        <!--        <br>-->
+        <!--    Для восстановления пароля перейдите на <a href="#"> этой ссылке</a>-->
+    </p>
+
+</div>
+
+<hr>
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="row-fluid">
+
+            <div class="span6"> <!--NPR -->
+                <div style=" width: 300px; height: 300px; position: relative; float: right; padding: 10px">
+                    <div class="row-fluid">
+
+                        <div class="row-fluid">
+                            <!--
+                              <p class="text-center" style="border: #c0c0c0 double 1px; border-radius: 10px; padding: 5px">
+                                 Научно педагогический сотрудник
+                              </p>
+   -->
+                            <p class="text-center"><b>Научно-педагогический сотрудник</b>
+                            </p>
+
+                        </div>
+
+
+                        <div  class="row-fluid" style="margin-bottom: 5px">
+
+                            <label class="control-label" for="inputEmail">Логин</label>
+                            <div class="controls">
+                                <input type="text" id="inputLogin" placeholder="Введите логин" class="span12">
+                            </div>
+                        </div>
+                        <div class="row-fluid" >
+
+                            <label class="control-label" for="inputPassword" >Пароль</label>
+                            <div class="controls">
+                                <input type="password" id="inputPassword" placeholder="Введите пароль"  class="span12">
+                            </div>
+
+                        </div>
+                        <div class="row-fluid">
+
+                            <div class="controls">
+                                <button type="submit" id="btn-autorization" class="btn btn-primary span12">
+                                    <div id="text_btn_autoriz"> Авторизовать<br>
+                                        научно-педагогического сотрудника</div>
+                                </button>
+                            </div>
+
+
+                        </div>
+                        <div class="row-fluid">
+                            <div class="control-group pull-right">
+                                <div class="controls">
+                                    <a href="<?php echo $this->url('Registration', array('action'=>'returnpassword')); ?>">Забыли пароль?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div id="sys_msg_user">
+                                <!-- Message.js -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="span6"><!-- KAF -->
+                <div style=" width: 300px; height: 300px; position: relative; float: left; padding: 10px">
+                    <div class="row-fluid">
+                        <div class="row-fluid">
+                            <p class="text-center"><b>Кафедры</b>
+                            </p>
+                        </div>
+
+                        <div  class="row-fluid" >
+
+                            <label class="control-label" for="inputEmail">Выберите кафедру</label>
+                            <div class="controls">
+                                <label type='select'>
+                                    <select class="search-query span12" id='login-kaf' type="text">
+                                        <?php foreach($kafedra as $key => $val):  ?>
+                                            <option name="<?php echo $key; ?>"><?php echo $val; ?></option>
+                                        <?php endforeach; ?>
+
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+
+                            <label class="control-label" for="inputPassword" >Пароль</label>
+                            <div class="controls">
+                                <input type="password" id="inputPassword-kaf" placeholder="Введите пароль"  class="span12">
+                            </div>
+
+                        </div>
+                        <div class="row-fluid">
+
+                            <div class="controls">
+                                <button type="submit" id="btn-autorization-kafedra" class="btn btn-primary span12">
+                                    <div id="text_btn_autoriz-kaf"> Авторизация<br>кафедры</div>
+                                </button>
+                            </div>
+
+
+                        </div>
+<!--                        <div class="row-fluid">-->
+<!--                            <div class="control-group pull-right">-->
+<!--                                <div class="controls">-->
+<!--                                    <a href="--><?php //echo $this->url('Registration', array('action'=>'returnpassword')); ?><!--">Забыли пароль?</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="row-fluid">
+                            <div id="sys_msg_kaf">
+                                <!-- Message.js -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
