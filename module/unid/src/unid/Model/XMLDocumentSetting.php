@@ -144,7 +144,9 @@ class XMLDocumentSetting {
 
         }elseif($post->document == 'plan_nid')
         {
-            self::getOptionTable($options, 'kaf_thematic_plan_to_nid', 'id_kaf');
+            self::getOptionTable($options, 'kaf_thematic_plan_to_nid', array(
+                'find_cell'=> 'id_kaf'
+            ));
 
             self::getOptionTable($options, 'kaf_plan_sm',array(
                 'append_cell_fio'=>true,
@@ -154,8 +156,10 @@ class XMLDocumentSetting {
 
         }elseif($post->document == 'plan_rid')
         {
-            var_dump($logins);
+            //var_dump($logins);
             self::getOptionTable($options, 'plan_publication', array(
+                'append_cell_fio'=>true,
+                'text_cell_fio'=>'Автор',
                 'find_cell'=> array('login'=>$logins)
             ));
 
